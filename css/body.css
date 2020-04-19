@@ -1,0 +1,203 @@
+/**Writing Area**/
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+/**Code Writing**/
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Gotu&display=swap');
+/**Heading**/
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Noto+Sans+JP:wght@500&display=swap');
+body {
+  margin: 0 5px;
+}
+h1 {
+	text-shadow: 3px 3px 5px #000000;
+	font-size: 50px;
+	margin-top: 5px;
+}
+h2 {
+	color: maroon;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'Gotu', 'Noto Sans JP', sans-serif, Georgia;
+}
+h3 {
+	color: darkgreen;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Gotu', 'Noto Sans JP', sans-serif, Georgia;
+	/*text-decoration: underline;*/
+}
+h4 {
+	color: #76448A;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'Gotu', 'Noto Sans JP', sans-serif, Georgia;
+}
+p {
+	text-align: justify;
+}
+/* Styling Coding */
+pre code {
+    
+    color: darkblue;
+    background-color: lavender;
+    display: block;
+    padding: 5px;   
+    font-size: 15px;
+}
+code {
+	font-size:15px;
+}
+#c {
+    color: darkblue;
+    font-family: courier,arial,helvetica;
+    /* font-style: italic; */
+    font-weight: bold;
+    font-size: 15px;
+}
+.sample {
+	color: darkblue;
+    background-color: lavender;
+    font-family: courier,arial,helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px;
+}
+span {
+  background-color: lavender;
+  color: darkblue;
+  font-family: courier,arial,helvetica;
+}
+/* Styling Header */
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  text-align: center;
+  color: #21618C;
+  /* background-color: grey; */
+}
+
+/* Left and right column */
+.column.side {
+  width: 20%;
+  height: 75px;
+}
+
+/* Middle column */
+.column.middle {
+  width: 55%;
+  height: 75px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* AVATAR  */
+.avatar {
+    display: block;
+    width: 75px;
+    height: 75px;
+    box-shadow: 5px 5px #000000;
+}
+img.avatar {
+    border-radius: 25%;
+    border-style: none;
+    margin: 0px auto;
+}
+u {
+  text-decoration: underline;
+}
+/* TABLE  */
+table, th, td {
+	border: 0.5px solid;
+	border-collapse: collapse;
+	margin: 15px auto;
+	border-color: #8080ff;
+	padding: 5px;
+	
+}
+table #01 {
+	padding:5px;
+}
+td {
+	text-align: left;
+}
+
+th {
+	font-weight: bold;
+	font-size: 17px;
+	/*background-color: #dbdeda; */
+}
+.writing {
+	margin: 0% 5% 3% 5%;
+    height: 100%;
+    color: #1C2833;
+    font-family: 'Gotu', sans-serif;
+}
+
+/**To make a note**/
+.note {
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
+  padding: 5px 15px 5px 15px;
+  box-shadow: 5px 5px #D98880;
+  border-radius: 10px;
+}
+/* <div class="note">
+  <p><strong>Note!</strong> Some text...</p>
+</div--> */
+.warning {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+  padding: 5px 15px 5px 15px;
+  box-shadow: 5px 5px #D98880;
+  border-radius: 10px;
+}
+
+.success {
+  background-color: #ddffdd;
+  border-left: 6px solid #4CAF50;
+  padding: 5px 15px 5px 15px;
+  box-shadow: 5px 5px #D98880;
+  border-radius: 10px;
+}
+.info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+  padding: 5px 15px 5px 15px;
+  box-shadow: 5px 5px #D98880;
+  border-radius: 10px;
+}
+/*Scroll to top*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:  #48c9b0;
+  color: #f2f3f4;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+/*
+* <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+* see script on pridata.html
+*/
+/**/
+
+.borderimg { 
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 5px 5px #1ABC9C;
+}

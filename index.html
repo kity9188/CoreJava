@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning Java</title>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="img/icon.ico">
+<link rel="stylesheet" href="css/sidenav.css">
+<link rel="stylesheet" href="css/body.css">
+<link rel="stylesheet" href="css/hr.css">
+
+
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+  <!-- a class="active" href="index.html"><i class="fas fa-home"></i>&nbsp;Home</a-->
+  <a class="dropdown-btn active"><i class="fas fa-home"></i>&nbsp; Home &nbsp;<i class="fa fa-caret-down"></i></a>
+  <div class="dropdown-container">
+    <!-- a href="index.html"><i class="fas fa-home"></i>&nbsp;Home</a-->
+    <a href="#basics">Java Basics</a>
+	<a href="#hello">Hello World Project</a>
+	<a href="#jar?">What is JAR ?</a>
+	<a href="#oop">What is OOP?</a>
+  </div>
+  <a href="pages/variables.html">Variables</a>
+  <a href="pages/expressions.html">Expressions</a>
+  <a href="pages/pridata.html">Primitive Data Types</a>
+  <a href="pages/casting.html">Casting</a>
+  <a href="pages/operators.html">Operators</a>
+  <a href="pages/keywords&Expressions.html">KeyWords & Expressions</a>
+  <a href="pages/StatementWhiteSpacesAndIndentation.html">Code Organization</a>
+</div>
+
+<div id="main">
+<!----------Styling the header---------->
+<div class="row">
+	<div class="column side">
+		<img src="img/java.png" alt="Logo" class="avatar">
+	</div>
+	<div class="column middle">
+		<h1>Learning Java</h1>
+	</div>
+	<div class="column side">
+		<p>Start Date: 28-Mar-2020
+		<br>End Date: 27-April-2020(expected)</p>
+	</div>
+</div>
+<hr class="new4">
+<button class="openbtn" onclick="openNav()" id="menu"><i class="fas fa-bars"></i></button>  
+ <!--------------------Body Starts------------------>
+<div class="writing">
+<h2 id="basics">Java Basics</h2>
+<hr>
+<h3>What is Java ?</h3>
+<ul>
+<li>Java is a programming Language.</li>
+<li>Developed by SUN MICROSYSTEMS.</li>
+<li>Built by James Gosling (1991-1995).</li>
+<li>Platform independent language: can be executed on any OS.</li>
+</ul>
+<h3>How to run a Java program ?</h3>
+<ul>
+<li>Write a your code into a text file. <i>* Make sure that file name and class name are same.</i></li>
+<li>Save it with extension '.java' e.g. <code>Hello.java</code></li>
+<li>Open command line and go to your file location where 'Hello.java' is saved.</li>
+<li>Compile the code using <code>javac Hello.java</code>. It will check for errors if any.</li>
+<li>If no error, it will generate the <span>bytecode</span> i.e., the <span>.class</span> file.</li>
+<li>Now run <code>java (file_name)</code> without extension. In our case <code>java Hello</code> to see the output</li>
+</ul>
+
+<h3>How this works?</h3>
+<p>When we run <code>javac Hello.java</code>, Java compiler 
+compiles the code and convert it into <span>bytecode</span>. <span>bytecode</span> is something that can be understood 
+by the machine irrespective of the coding platform. Hence, making Java 
+platform independent.</p>
+
+<img alt="Architecture" src="img/Structure.png">
+<hr>
+<h2 id="hello">Hello World Project</h2>
+<pre>
+	<code>
+	public class HelloWorld {
+		public static void main(String[] args) {
+			System.out.println("Hello World");
+		}
+	}
+	</code>
+</pre>
+<h3>Explanation</h3>
+
+<p>* In this code <span>HelloWorld</span> is the class name. Hence, file should be saved with name <code>HelloWorld.java</code> only.</p>
+<p>
+	It has two <b>KeyWords</b> viz., <a id="c">public</a> and <a id="c">class</a>. They have a specific meaning.
+ </p>
+ <p>
+	<b>KeyWords:</b> has a specific meaning in any programming language. 
+  	Java programs are written by following specific rules using these keywords.
+ </p>
+  <p>
+  	The <a id="c">public</a> Java keyword is an access modifier. An access modifier 
+  	allows us to define the scope or how other parts of our code or even someone else's code can access this code.
+  </p>
+  <p>
+  	The <a id="c">class</a> keyword is used to define a class with the name following the keyword.
+   	<b>"HelloWorld"</b> in this case and curly braces <b>{ }</b> defines the class block.
+   </p>
+   
+<div class="note">
+	<p><strong>Note:</strong> Keywords are case sensitive. <a id="c">PUBLIC</a> and <a id="c">Public</a> and even <a id="c">public</a> are different things.</p>
+ </div>   
+
+   	
+   <p>
+   	<b>Methods:</b> A collection of statements (one or more) that perform an operation.
+    We'll be using a special method called the <a id="c">main</a> method that Java looks for
+     when running a program. It's the entry point of any Java code.
+	</p>
+	<p>
+	<a id="c">public</a> is an access modifier.
+	
+	<a id="c">static</a> is a keyword. We need to have this to find our method to run the code we are using here.
+	</p>
+	<p>
+	<a id="c">void</a> is another keyword used to indicate that the method will not return anything more on that later.
+	</p><hr>
+	<p>
+	<b>Code Block:</b> is used to define a block of code. It's mandatory to
+	 have one in a method declaration and it's here where we will be adding statements to perform certain tasks.
+	</p>
+	<p>
+	<b>Statement:</b> This is a complete command to be executed and can include one or more expressions. Here, below one is an statement:</p>
+	
+	<div class="sample">System.out.println("Hello World");</div>
+<hr>
+<!-- ---------------------------------------- -->
+<h2 id="jar?">What is JAR ?</h2>
+<p>JAR is an acronym for JAVA Archive. JAR = Java Archive</p>
+<ul>
+<li>It is actually compressed format of a compiled Java project(i.e., the .class file).</li>
+<li>Contains .class files + meta data and some other resources.</li>
+<li>Used to distribute java code/libraries for use by other projects.</li>
+<li><span>.jar</span> files can also be used for direct execution(without any IDE) of java program</li>
+</ul>
+<!-- ---------------------------------------- -->
+<h3>How to Create a .jar file from command line?</h3>
+<ol>
+<li>Create .java file with class name. Say <code>HelloWorld.java</code></li>
+<li>Compile the code: <code>javac HelloWorld.java</code></li>
+<li>Create a new file with extension <code>.mf</code>. Say <code>myfile.mf</code></li>
+<li>Inside this <code>myfile.mf</code> file write: <code>Main-Class: HelloWorld</code> (HelloWorld is the class name).
+<a style="color:red">Don't forget to add a new line.</a></li>
+<li>Now run the command <code>jar -cvmf myfile.mf myjar.jar HelloWorld.class</code></li>
+<li>A file with name myjar.jar will be created.</li>
+</ol>
+<p>This .jar file can be transferred and run form any platform</p>
+<!-- ---------------------------------------- --> 
+ <h3>How to run a .jar file ?</h3>
+ <ol>
+ <li>Go to .jar location.</li>
+ <li>Type <code>java -jar filename.jar</code></li>
+ </ol>
+ * <a href="https://www.javatpoint.com/how-to-make-an-executable-jar-file-in-java" target=" ">Source</a>|
+ <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/index.html" target=" ">Official Documentation</a>
+ <br><br>
+ <img alt="overview" src="img/Steps.PNG" class="borderimg">
+ 
+ <br><br>
+ <!-- ---------------------------------------- --> 
+ <hr>
+ <ul>
+ <li><strong>JDK: JAVA Development Kit</strong> Environment to develop, compile and run java application</li>
+ <li><strong>JRE: JAVA Runtime Environment</strong> Environment to run java applications</li>
+ <li><strong>JVM: JAVA Virtual Machine</strong> Interpreter to execute java programs line by line</li>
+ </ul>
+ <img alt="nutshell" src="img/idea.png">
+ <br><br>
+ <hr class="new1">
+ <h2 id="oop">What is OOP?</h2>
+ <p>It is a method of programming where code is designed and based on the functions and attributes of the objects.</p>
+ <h3>How did Programming Evolve?</h3>
+ <ul>
+ <li><strong>Non Structured Programming:</strong> The developers were create a very linear programme.
+  i.e., no modules in the programme. There were simple programs with all the actions coded within. 
+  e.g., Basic, Cobol, Fortran. This kind of programming made it very difficult to maintain and 
+  enhance the code. In fact the developers who created the code found it very difficult to read 
+  their own code because it has grown so large and so complex; there were no models. The issues 
+  with this kind of programming, led to structured programming.</li>
+ <li><strong>Structured Programming:</strong> Here the code led into structures or modules; 
+ and modules could talk to each other. e.g., C, Pascal. This was very successful and coding 
+ was very easy and convenient but still, it was felt that for larger enterprise level applications
+  we need something more. The programming should be able to relate real life entities and due to 
+  this a new kind of programming methodology was born, which was known
+   as <strong>Object Oriented Programming</strong>. e.g., C++, Java.</li>
+ </ul>
+<img alt="programming evolution" src="img/programming evolution.png" class="borderimg"> 
+</div>
+ <!---------------------Body Ends------------------->
+</div>
+<!------------------------------------ /***Scroll Up Button Starts***/ ------------------------------>
+<!--button onclick="topFunction()" id="myBtn" title="Go to top" style="display: block;"><i class="fas fa-angle-double-up"></i></button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<!------------------------------------ /***Scroll Up Button Ends***/ ------------------------------>
+<!--------Script for Sidenav---------->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+</body>
+</html>

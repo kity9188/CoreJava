@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java: Operators</title>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="../img/icon.ico">
+<link rel="stylesheet" href="../css/sidenav.css">
+<link rel="stylesheet" href="../css/body.css">
+<link rel="stylesheet" href="../css/hr.css">
+
+
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+  <a href="../index.html"><i class="fas fa-home"></i>&nbsp;Home</a>
+  <a href="variables.html">Variables</a>
+  <a href="expressions.html">Expressions</a>
+  <a href="pridata.html">Primitive Data Types</a>
+  <a href="casting.html">Casting</a>
+  <a class="dropdown-btn active">Operators &nbsp;<i class="fa fa-caret-down"></i></a>
+  <div class="dropdown-container">
+    <a href="operators.html">Operators</a>
+    <a href="#otab">Operator Precedence</a>
+	<a href="#osum">Operator Summary</a>
+  </div>
+  <a href="keywords&Expressions.html">KeyWords & Expressions</a>
+  <a href="StatementWhiteSpacesAndIndentation.html">Code Organization</a>
+</div>
+
+<div id="main">
+<!----------Styling the header---------->
+<div class="row">
+	<div class="column side">
+		<img src="../img/java.png" alt="Logo" class="avatar">
+	</div>
+	<div class="column middle">
+		<h1>Learning Java</h1>
+	</div>
+	<div class="column side">
+		<p>Start Date: 28-Mar-2020
+		<br>End Date: 27-April-2020(expected)</p>
+	</div>
+</div>
+<hr class="new4">
+<button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>  
+ <!--------------------Body Starts------------------>
+<div class="writing">
+<h2>Operators</h2>
+<p><strong>Operators</strong> in Java are special symbols that perform specific operations on one, two
+  or three operands and then return a result.</p>
+  <br>
+  <h3>What is an Operand?</h3>
+  <p>An <strong>operand</strong> is a term used to describe any object that is manipulated by an
+   <strong>operator</strong>. If we consider below statement:</p>
+   
+   <p><span>
+   	int myVar = 15 + 12;</span>
+   </p>
+   
+   <p>Then <b>+</b> is the operator, and <b>15</b> and <b>12</b> are operands. Variables used instead of literals
+   are also <b>operands</b>.</p>
+   
+   <p><span>
+   	double mySalary = hoursWorked * hourlyRate;</span>
+   </p>
+   
+   <p>In the above line <b>hoursWorked</b> and <b>hourlyRate</b> are <b>operands</b>, and <b>*</b> (multiplication)
+   is the <b>operator</b>.</p>
+   <br>
+   <h3>What is an Expression?</h3>
+   
+   <p>An <strong>expression</strong> is formed by combining variables, literals, method and return values 
+   and operators.</p>
+   
+   <p>In the line below, <b>15 + 12</b> is the expression which has (or returns) <b>27</b> in this case.</p>
+   
+   <p><span>
+   	int myVar = 15 + 12;</span>
+   </p>
+   
+   <p>Summary:</p>
+   <table>
+   <tr>
+   	<td colspan="2" rowspan="1"><b>double mySalary = hoursWorked * hourlyRate;</b>
+   	<br>
+   	<b>int myVar = 15 + 12;</b></td>
+   	
+   </tr>
+   <tr>
+   	<td><b>+</b>  <b>*</b></td>
+   	<td>are Operator</td>
+   	
+   </tr>
+   <tr>
+   	<td><b>15, 12, hoursWorked, hourlyRate</b></td>
+   	<td>are Operand</td>
+   	
+   </tr>
+   <tr>
+   	<td><b>15 + 12</b> and <b>hoursWorked * hourlyRate</b></td>
+   	<td>are Expressions</td>
+   	
+   </tr>
+   </table>
+   <br>
+   <h3>What is a Comment?</h3>
+   <p><strong>Comments '//'</strong> are ignored by the computer and are added to 
+   a program to help describe something. <strong>Comments</strong> are there for humans.
+   Aside from describing something about a program, comments can be used <strong>to temporarily
+   disable code</strong>.</p>
+   <br>
+   <h3>if-then Statements in Java</h3>
+   <p>The <strong>if-then</strong> statement is the most basic of all control flow
+   statements. It tells the program to execute a certain section of code only if a
+   particular test evaluates to <strong>true</strong>. <i>This is known as <strong>conditional logic</strong></i>.</p>
+   <br>
+   <h3>Conditional Logic</h3>
+   <p><strong>Conditional logic</strong> uses specific statements in Java to allow us to 
+   check a condition and execute certain code based on whether that condition (the expression) 
+   is <strong>true</strong> or <strong>false</strong>.</p>
+   
+   <div class="info">
+     <p><strong>Info!</strong>&nbsp;&nbsp; <strong>if-then</strong> rule always uses a code block.
+	  A <strong>code block</strong> allows more than one statement to be executed - 
+	  a block of code.
+     </p>
+	</div>
+   <table>
+	<tr>
+		<th>Code</th>
+		<th>Output</th>
+	</tr>
+	<tr>
+		<td>Without Code Block
+		<pre><code>
+	boolean isAlien = false;
+	if (isAlien == true)// toggle the value to true/false to see the output
+		System.out.println("It is not an Alien.");
+		System.out.println("And I'm scared of Alien.");
+
+		</code></pre>
+		</td>
+		<td>And I'm scared of Alien.</td>
+	</tr>
+	<tr>
+		<td>Now with Code Block
+		<pre><code>
+	boolean isAliens = false;
+	if (isAliens == false) {// toggle the value to true/false to see the output
+		System.out.println("It is not an Alien.");
+		System.out.println("And I'm scared of Alien.");
+	}	
+		</pre></code></td>
+		<td>It is not an Alien.<br>
+And I'm scared of Alien.</td>
+	</tr>
+   </table>
+   <hr>
+   <h3 id="otab">Java Operator Precedence Table</h3>
+   
+   <p><i>Larger number means higher precedence</i>.
+   <a href="http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html" target=" "> Link</a></p>
+   
+   <table>
+<tr><th>Precedence</th><th>Operator</th><th>Type</th><th>Associativity</th></tr>
+<tr>
+  <td style="text-align: center;">15</td>
+  <td style="text-align: center;">()<br>[]<br>Â·</td>
+  <td>Parentheses<br>Array subscript<br>Member selection<br></td>
+  <td align=center>Left to Right</p></td>
+</tr>
+<tr>
+  <td style="text-align: center;">14</td>
+  <td style="text-align: center;">++<br>--</td>
+  <td>Unary post-increment<br>Unary post-decrement</td>
+  <td align=center>Right to left</td>
+</tr>
+ <tr>
+  <td style="text-align: center;">13</td>
+  <td style="text-align: center;">++<br>--<br>+<br>-<br>!<br>~<br>( <i>type</i> )</td>
+  <td>Unary pre-increment<br>Unary pre-decrement<br>Unary plus<br>Unary minus<br>Unary logical negation<br>Unary bitwise complement<br>Unary type cast</td>
+  <td align=center>Right to left</td>
+</tr>
+<tr>
+  <td style="text-align: center;">12</td>
+  <td style="text-align: center;"> * <br> / <br> % </td>
+  <td>Multiplication<br>Division<br>Modulus</td>
+  <td align=center>Left to right</td>
+</tr>
+<tr>
+  <td style="text-align: center;">11</td>
+  <td style="text-align: center;">+<br>-<o:p></td>
+  <td>Addition<br>Subtraction</td>
+  <td align=center>Left to right</td>
+</tr>
+<tr>
+  <td style="text-align: center;">10</td>
+  <td style="text-align: center;">&lt;&lt;<br>&gt;&gt;<br>&gt;&gt;&gt;</td>
+  <td>Bitwise left shift<br>Bitwise right shift with sign extension<br>Bitwise right shift with zero extension</td>
+  <td align=center>Left to right</td>
+</tr>
+<tr>
+  <td style="text-align: center;">9</td>
+  <td style="text-align: center;">&lt;<br>&lt;=<br>&gt;<br>&gt;=<br>instanceof</td>
+  <td>Relational less than<br>Relational less than or equal<br>Relational greater than<br>Relational greater than or equal<br>Type comparison (objects only)</td>
+  <td align=center>Left to right</td>
+</tr>
+<tr>
+  <td style="text-align: center;">8</td>
+  <td style="text-align: center;">==<br>!=</td>
+  <td>Relational is equal to<br>Relational is not equal to</td>
+  <td align=center>Left to right</td>
+</tr>
+ <tr>
+  <td style="text-align: center;">7</td>
+  <td style="text-align: center;">&amp;</td>
+  <td>Bitwise AND</td>
+  <td align=center>Left to right</td>
+</tr>
+ <tr>
+  <td style="text-align: center;">6</td>
+  <td style="text-align: center;">^</td>
+  <td>Bitwise exclusive OR</td>
+  <td align=center>Left to right</td>
+</tr>
+<tr>
+  <td style="text-align: center;">5</td>
+  <td style="text-align: center;">|</td>
+  <td>Bitwise inclusive OR</td>
+  <td align=center>Left to right</td>
+</tr>
+<tr>
+  <td style="text-align: center;">4</td>
+  <td style="text-align: center;">&amp;&amp;</td>
+  <td>Logical AND</p>
+  </td>
+  <td align=center>Left to right</td>
+</tr>
+ <tr>
+  <td style="text-align: center;">3</td>
+  <td style="text-align: center;">||</td>
+  <td>Logical OR</td>
+  <td align=center>Left to right</td>
+</tr>
+<tr>
+  <td style="text-align: center;">2</td>
+  <td style="text-align: center;">? :</td>
+  <td>Ternary conditional</td>
+  <td align=center>Right to left</td>
+</tr>
+<tr>
+  <td style="text-align: center;">1</td>
+  <td style="text-align: center;">=<br>+=<br>-=<br>*=<br>/=<br>%=</td>
+  <td>Assignment<br>Addition assignment<br>Subtraction assignment<br>Multiplication assignment<br>Division assignment<br>Modulus assignment</td>
+  <td align=center>Right to left</td>
+</tr>
+</table>
+   <hr>
+   <h3 id="osum">Summary of Operators:</h3>
+
+<h4>Simple Assignment Operator</h4>
+<div class="codeblock"><pre>
+=       Simple assignment operator
+</pre></div>
+<h4>Arithmetic Operators</h4>
+<div class="codeblock"><pre>
++       Additive operator (also used
+        for String concatenation)
+-       Subtraction operator
+*       Multiplication operator
+/       Division operator
+%       Remainder operator
+</pre></div>
+<h4>Unary Operators</h4>   
+<div class="codeblock"><pre>
++       Unary plus operator; indicates
+        positive value (numbers are 
+        positive without this, however)
+-       Unary minus operator; negates
+        an expression
+++      Increment operator; increments
+        a value by 1
+--      Decrement operator; decrements
+        a value by 1
+!       Logical complement operator;
+        inverts the value of a boolean
+</pre></div>
+<h4>Equality and Relational Operators</h4>
+<div class="codeblock"><pre>
+==      Equal to
+!=      Not equal to
+&gt;       Greater than
+&gt;=      Greater than or equal to
+&lt;       Less than
+&lt;=      Less than or equal to
+</pre></div>
+<h4>Conditional Operators</h4>
+<div class="codeblock"><pre>
+&amp;&amp;      Conditional-AND
+||      Conditional-OR
+?:      Ternary (shorthand for 
+        <span>if-then-else</span> statement)
+</pre></div>
+<h4>Type Comparison Operator</h4>
+<div class="codeblock"><pre>
+instanceof      Compares an object to 
+                a specified type 
+</pre></div>
+<h4>Bitwise and Bit Shift Operators</h4>
+<div class="codeblock"><pre>
+~       Unary bitwise complement
+&lt;&lt;      Signed left shift
+&gt;&gt;      Signed right shift
+&gt;&gt;&gt;     Unsigned right shift
+&amp;       Bitwise AND
+^       Bitwise exclusive OR
+|       Bitwise inclusive OR
+</pre></div>   
+<br>   
+<a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html" target=" ">Official Link</a>   
+<hr>
+<h3>Operator Examples:</h3>
+
+<table>
+<tr>
+<th>Abbreviating Operators:</th>
+<td>
+<pre><code>
+	//result = result + 1;
+	
+	result++; // 1 + 1
+	System.out.println("1 + 1 = "+result);
+		
+	result--;
+	System.out.println("2 - 1 = "+result);
+		
+	// result = result + 2;
+	result += 2;
+	System.out.println("1 + 2 = "+result);
+
+	// result = result * 10;
+	result *= 10;
+	System.out.println("3 * 10 = "+result);
+		
+	// result = result / 10;
+	result /= 10;
+	System.out.println("30 / 10 = "+result);
+		
+	// result = result - 2;
+	result -= 2;
+	System.out.println("3 - 2 = "+result);
+</code></pre></td>
+<td>= result++;</td>
+</tr>
+<tr>
+<th>Logical && Operator</th>
+<td><pre><code>
+	int secondTopScore = 60;
+	if (topScore > secondTopScore && topScore < 100 ) {
+		System.out.println("Greater than 2nd topscore and less than 100");
+	}
+</code></pre></td>
+<td>The <strong>AND</strong> operator comes in two flavors in Java, as does the <strong>Or</strong>
+ operator. <strong>&&</strong> is the Logical <strong>AND</strong> which operates on <strong>boolean</strong>
+  operands - Checking if a given condition is <strong>true</strong> or <strong>false</strong>.<br>
+  The <strong>&</strong> is a bitwise operator working at the bit level.</td>
+</tr>
+<tr>
+<th>Logical || Operator</th>
+<td>
+<pre><code>
+	int topScore = 80;
+	if (topScore != 100) { //toggle between "==" and "!=" to see the changes
+		System.out.println("You got the high score!");
+	}
+		
+	int topScore1 = 100;
+	if (topScore1 <= 100) { //toggle between ">", "<", "<=" and ">=" to see the changes
+		System.out.println("You got the high score!");
+	}
+		
+	int secondTopScore = 60;
+	if (topScore > secondTopScore && topScore < 100 ) {
+		System.out.println("Greater than 2nd topscore and less than 100");
+	}
+		
+	if ((topScore > 90) || (secondTopScore <= 90)) {
+		System.out.println("Either or both of the conditions are true.");
+	}
+</code></pre>
+</td>
+<td>Likewise <strong>||</strong> is the Logical <strong>OR</strong> which again operates 
+on <strong>boolean</strong> operands - checking if a given condition is <strong>true</strong> 
+or <strong>false</strong>.<br>
+Again, <strong>|</strong> is a bitwise operator working at the bit level.</td>
+</tr>
+<tr>
+<th>The ! Operator</th>
+<td>The ! or NOT Operator is also known as the Logical Compliment Operator.<br>
+ For use with <strong>booleans</strong> it tests the alternative value -  as we can see below 
+ <strong>(isCar)</strong> tests for <strong>true</strong>, by adding a <strong>!</strong> 
+ operator before the value we can check the opposite - <strong>false</strong> in this case.</td>
+<td>
+<strong>boolean isCar = false;</strong><br>We can use either of these statements:<br>
+<strong>if (isCar == false)<br>if (!isCar)</strong><br>
+to check if the <strong>boolean is Car</strong> is <strong>false</strong>.
+</td>
+</tr>
+<tr>
+<th>? : Ternary Operator</th>
+<td>
+<pre><code>
+    isCar = true;
+	boolean wasCar = isCar ? true : false;
+	if (wasCar) {
+		System.out.println("wasCar is true");
+	}
+</code></pre><br>
+<span>boolean wasCar = isCar ? true : false;</span><br>
+In this case we have three operands viz: <strong>isCar</strong>, <strong>true</strong>, <strong>false</strong>.<br>
+<strong>isCar</strong>: The first operand is the condition we are testing. It evaluates if it is true or false.<br>
+<strong>True</strong>: if the value assigned to <strong>'wasCar'</strong> i.e., first condition was true.<br>
+<strong>False</strong>: if the value assigned to <strong>'wasCar'</strong> i.e, first condition was false.<br>
+If <strong>isCar = false</strong> -> no output will be there.
+<hr>
+<code>
+<strong>int ageOfClient = 20; <br>
+boolean isEighteenOrOver = ageOfClient == 20 ? true : false;</strong></code>
+<br><br>
+In this case, <strong>isEighteenOrOver</strong> is assigned the value <strong>true</strong> 
+because <strong>ageOfClient</strong> has the value <strong>20</strong>.<br>
+It can be a good idea to use <strong>parenthesis</strong> like this to make the code more readable.
+<strong>boolean isEighteenOrOver = (ageOfClient == 20) ? true : false;</strong>
+</td>
+<td>
+The <strong>ternary</strong> operator is a shortcut to assigning one of two values to a variable
+depending on a given condition.<br><i>It's a shortcut of the <strong>if-then-else</strong> 
+statement.</i>
+<hr>
+<strong>int ageOfClient = 20;<br>
+boolean isEighteenOrOver = ageOfClient == 20 ? true : false;</strong><br>
+Operand one - <strong>ageOfClient == 20</strong> in this case is the condition we're checking. 
+It needs to return <strong>true</strong> or <strong>false</strong>.<br>
+Operand two - <strong>true</strong> here is the value of assign to the variable <strong>isEighteenOrOver</strong> 
+if the condition above is <strong>true</strong><br>
+Operand three - <strong>false</strong> here is the value to assign to the variable <strong>isEighteenOrOver</strong> 
+if the condition above was <strong>false</strong>
+</td>
+</tr>
+</table>
+
+<h3>Coding Examples:</h3>
+
+<table>
+<tr>
+<td>Testing boolean condition (= vs ==)
+<pre><code>
+	int newValue = 50;
+	if (newValue = 50) { // this statement is expecting an int value, but considering it as boolean.
+	// because with 'if' is used for a condition either 'yes' or 'no'.
+	//here we're using assignment operator not equal operator hence the error.
+		System.out.println("This is an error");
+	}
+</code></pre>* (copy and paste in editor to see the error)
+</td>
+</tr>
+<tr>
+<td>
+<pre><code>
+	boolean isCar = false;
+	if (isCar == true) { // this is not showing any error b/c we are already using the
+	//expected type which is boolean. But this is logically not correct.
+		System.out.println("This is not supposed to happen");
+	}
+</pre></code><pre><code>		
+	boolean isbike = false;
+	if (isbike == true) { 
+		System.out.println("This is not supposed to happen");
+	} // Now no output as expected
+</code></pre></td>
+</tr>
+<tr>
+<td>Other Ways or representing this condition
+<pre><code>
+	boolean iscycle = false;
+	if (iscycle) { //by default considered true
+		System.out.println("This is not supposed to happen");
+	}
+</code></pre><pre><code>		
+	boolean isbird = false;
+	if (!isbird) {
+		System.out.println("This is not supposed to happen bird");
+	}
+</code></pre><pre><code>		
+	boolean isbird = false;
+	if (isbird == false) {
+		System.out.println("This is not supposed to happen bird");
+	}
+</code></pre><pre><code>		
+	boolean isbird = false;
+	if (isbird != true) {
+		System.out.println("This is not supposed to happen bird");
+	}
+</code></pre>
+</td>
+</tr>
+</table><br>
+<h3>Operator Precedence & Operator Challenge</h3>
+<p><code>
+ * 1. Create a double variable with a value of 20.00.<br>
+ * 2. Create a second variable of type double with the value 80.00.<br>
+ * 3. Add both numbers together and multiply by 100.00.<br>
+ * 4. Use the remainder operator to figure out what the remainder from the result of
+ * 	  the operation in step 3 and 40.00.<br>
+ *    We used the modulus or remainder operator on ints, but we can also use it on double.<br>
+ * 5. Create a boolean variable that assigns the value true if the remainder( %) in #4 is 0,
+ *    of false if it is not zero.<br>
+ * 6. Output the boolean variable.<br>
+ * 7. Write an 'if-then' statement that displays a message "Got some remainder" if the boolean
+ *    in #5 is not true.<br>
+</code></p>
+<p>
+<pre><code>
+package challanges;
+
+public class OperatorsChallange {
+
+	public static void main(String[] args) {
+		
+		double firstValue = 20.00d;
+		double secondVariable = 80.00d;
+		double operation = (firstValue + secondVariable) * 100.00d; 
+		//if not using parenthesis, then operator precedence will follow
+		System.out.println(operation);
+		double remainder = operation % 40.00d;
+		System.out.println(remainder);
+		boolean output = (remainder == 0) ? true : false; ///// HIGHLIGHTED pay attention
+		System.out.println(output);
+		if (!output) {
+			System.out.println("Got Some Remainder!!!");
+		}
+		/*
+		 * if(remainder == 0) { output = true; }
+		 * else { output = false; } 
+		 * boolean finalOutput = output? true : false;
+		 * if (!finalOutput) { System.out.println("Got Some Remainder!!!"); }
+		 */
+	}
+
+}
+</code></pre>
+</p>
+<hr>
+
+<h5>Links:</h5>
+
+<a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html" target=" ">Summary of Operators</a>
+ | <a href="http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html" target=" ">Operator Precedence</a>
+
+
+</div>
+ <!---------------------Body Ends------------------->
+</div>
+<!------------------------------------ /***Scroll Up Button Starts***/ ------------------------------>
+<!--button onclick="topFunction()" id="myBtn" title="Go to top" style="display: block;"><i class="fas fa-angle-double-up"></i></button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<!------------------------------------ /***Scroll Up Button Ends***/ ------------------------------>
+<!--------Script for Sidenav---------->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+</body>
+</html>

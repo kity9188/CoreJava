@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java: Primitive Data Types</title>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="../img/icon.ico">
+<link rel="stylesheet" href="../css/sidenav.css">
+<link rel="stylesheet" href="../css/body.css">
+<link rel="stylesheet" href="../css/hr.css">
+
+
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+  <a href="../index.html"><i class="fas fa-home"></i>&nbsp;Home</a>
+  <a href="variables.html">Variables</a>
+  <a href="expressions.html">Expressions</a>
+  <a class="dropdown-btn active">Primitive Data Types &nbsp;<i class="fa fa-caret-down"></i></a>
+  <div class="dropdown-container">
+    <a href="pridata.html">Primitive Data Types</a>
+    <a href="#overflow">Overflow & Underflow</a>
+	<a href="#size">Size & Width of Data Types</a>
+	<a href="#f&d">Float & Double</a>
+	<a href="#c&b">Char & Boolean</a>
+	<a href="#string">String Class</a>
+	<a href="#lit">Literals</a>
+  </div>
+  <a href="casting.html">Casting</a>
+  <a href="operators.html">Operators</a>
+  <a href="keywords&Expressions.html">KeyWords & Expressions</a>
+  <a href="StatementWhiteSpacesAndIndentation.html">Code Organization</a>
+</div>
+
+<div id="main">
+<!----------Styling the header---------->
+<div class="row">
+	<div class="column side">
+		<img src="../img/java.png" alt="Logo" class="avatar">
+	</div>
+	<div class="column middle">
+		<h1>Learning Java</h1>
+	</div>
+	<div class="column side">
+		<p>Start Date: 28-Mar-2020
+		<br>End Date: 27-April-2020(expected)</p>
+	</div>
+</div>
+<hr class="new4">
+<button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>  
+ <!--------------------Body Starts------------------>
+<div class="writing">
+<h2>Primitive Data Types</h2>
+<p>The Java programming language is statically-typed, 
+which means that all variables must first be declared 
+before they can be used. This involves stating the variable's 
+type and name, as</p>
+
+<code><span>int myNumber = 1;</span></code>
+
+<p>Doing so tells our program that a field named <font color="darkblue">"myNumber"</font> 
+exists, holds numerical data, and has an initial value of <font color="darkblue">"1"</font>.</p>
+
+<p>
+A variable's data type determines the values it may contain, plus the operations that may be performed on it. In addition to int, the Java programming language supports seven other primitive data types.
+</p>
+<p>
+A primitive type is predefined by the language and is named by a reserved keyword. Primitive values do not share state with other primitive values. The eight primitive data types supported by the Java programming language are:
+</p>
+<ol>
+<li><font color="darkblue">byte</font></li>
+<li><font color="darkblue">short</font></li>
+<li><font color="darkblue">int</font></li>
+<li><font color="darkblue">long</font></li>
+<li><font color="darkblue">float</font></li>
+<li><font color="darkblue">double</font></li>
+<li><font color="darkblue">boolean</font></li>
+<li><font color="darkblue">char</font></li>
+</ol>
+
+  
+  <hr>
+  <h2 id="size">Size of Primitive Data Types and Width</h2>
+  <p>
+	A <a id="c">byte</a> occupies 8 bits. A bit is not directly represented in a primitive
+	type - We have a <b>boolean</b> which is not really the same thing. So a 
+	<a id="c">byte</a> occupies <b>8 bits.</b> We say that <b>byte</b> has a width of 8.
+  </p>
+  <p>
+  	A <a id="c">short</a> can store a large number and occupies <b>16 bits</b>, and has 
+  	a width of <b>16</b>.
+  </p>
+  <p>
+  	An <a id="c">int</a> has a much larger range as we know and occupies <b>32 bits</b>,
+  	and has a width of 32.
+  </p>
+  <p>The point here is that each primitive type occupies a different amount of 
+  memory - we can see that <a id="c">int</a> needs four times the amount of space
+  , than a <a id="c">byte</a> does here.</p>
+  
+  <hr>
+  <h3>Further explained...</h3>
+  
+  <table id="01">
+  	<tr>
+  		<th>Category</th>
+  		<th>Types</th>
+  		<th>Size(bits)</th>
+  		<th>Min Value</th>
+  		<th>Max Value</th>
+  		<th>Precision</th>
+  	</tr>
+  	<tr>
+  		<td rowspan=6>Integer</td>
+  	</tr>
+  	<tr>
+  		<td>byte</td>
+  		<td>8</td>
+  		<td>-128</td>
+  		<td>127</td>
+  		<td>from +127 to -128</td>
+  	</tr>
+  	<tr>
+  		<td>char</td>
+  		<td>16</td>
+  		<td>0</td>
+  		<td>2<sup>16</sup>-1 </td>
+  		<td>All Unicode characters</td>
+  	</tr>
+  	<tr>
+  		<td>short</td>
+  		<td>16</td>
+  		<td>-2<sup>15</sup></td>
+  		<td>2<sup>15</sup>-1 </td>
+  		<td>From +32,767 to -32,768 </td>
+  	</tr>
+  	<tr>
+  		<td>int</td>
+  		<td>32</td>
+  		<td>-2<sup>31</sup></td>
+  		<td>2<sup>31</sup>-1</td>
+  		<td>From +2,147,483,647 to -2,147,483,648 </td>
+  	</tr>
+  	<tr>
+  		<td>long</td>
+  		<td>64</td>
+  		<td>-2<sup>63</sup></td>
+  		<td>2<sup>63</sup>-1</td>
+  		<td>From +9,223,372,036,854,775,807 to -9,223,372,036,854,775,808 </td>
+  	</tr>
+  	<tr>
+  		<td rowspan = 3>Floating Point</td>
+  	</tr>
+  	<tr>
+  		<td>float</td>
+  		<td>32</td>
+  		<td>2<sup>-149</sup></td>
+  		<td>(2-2<sup>-23</sup>).2<sup>127</sup></td>
+  		<td>From 3.402,823,5 E+38 to 1.4 E-45 </td>
+  	</tr>
+  	<tr>
+  		<td>double</td>
+  		<td>64</td>
+  		<td>2<sup>-1074</sup></td>
+  		<td>(2-2<sup>-52</sup>).2<sup>1023</sup></td>
+  		<td>From 1.797,693,134,862,315,7 E+308 to 4.9 E-324 </td>
+  	</tr>
+  	<tr>
+  		<td rowspan="3">Other</td>
+  	</tr>
+  	<tr>
+  		<td>Boolean</td>
+  		<td>--</td>
+  		<td>--</td>
+  		<td>--</td>
+  		<td>false, true</td>
+  	</tr>
+  	<tr>
+  		<td>Void</td>
+  		<td>--</td>
+  		<td>--</td>
+  		<td>--</td>
+  		<td>--</td>
+  	</tr>
+  </table>
+  <br>
+  <p>Primitive types are the most basic data types available within the Java language. 
+  There are 8: <a id="c">boolean</a>, <a id="c">byte</a>, <a id="c">char</a>,
+   <a id="c">short</a>, <a id="c">int</a>, <a id="c">long</a>, 
+   <a id="c">float</a> and <a id="c">double</a>. 
+  These types serve as the building blocks of data manipulation in Java. 
+  Such types serve only one purpose - containing pure, simple values of a kind.<br>
+  Because these data types are defined into the Java type system by default,
+   they come with a number of operations predefined. We can not define
+    a new operation for such primitive types. In the Java type system,
+     there are three further categories of primitives: </p>
+     
+     <ol>
+     	<li><b>Numeric primitives:</b> short, int, long, float and double. 
+     	 These primitive data types, hold only numeric data or simple arithmetic
+     	 operations</li>
+     	 <br>
+     	 
+     	<li><b>Textual primitives:</b> byte and char. These primitive data 
+     	types hold characters (that can be <i>Unicode</i> alphabets or even numbers). 
+     	Operations associated with such types are those of textual manipulation 
+     	(comparing two words, joining characters to make words, etc.). 
+     	However, byte and char can also support arithmetic operations.</li>
+     	<br>
+     	
+     	<li><b>Boolean and null primitives:</b> boolean and null.</li>
+     </ol>
+     <div class="info">
+     <p><strong>Info!</strong>  All the primitive types have a fixed size. 
+     	Thus, the primitive types are limited to a range of values. 
+     	A smaller primitive type (<a id="c">byte</a>) can contain 
+     	less values than a bigger one (<a id="c">long</a>).
+     </p></div>
+     <hr>
+     <h2 id="f&d">Float and Double:</h2>
+     
+     <p><b>Floating Point Numbers</b>: Unlike whole numbers, floating point numbers have 
+     	fractional parts that we express with a decimal point. e.g. <b>3.14159</b>. <br>
+     	Floating point numbers are also known as real numbers. We use floating point
+     	number when we need more precision in calculations</p>
+     
+     <p><a id="c">Float</a> is a single precision number, whereas <a id="c">double</a> 
+     is a double precision number.</p>
+     
+     <p>Precision refers to the format and amount of space occupied by the type.
+     Single precision occupies <b>32 bits</b> (so has a width of 32) and a Double
+     precision occupies <b>64 bits</b> (and thus has a width of 64).</p>
+     
+     <table>
+  	<tr>
+  		<th>Code</th>
+  		<th>Output</th>
+  	</tr>
+  	<tr>
+  		<td>
+  		<pre><code>
+package lectures;
+
+public class floatAndDouble {
+
+	public static void main(String[] args) {
+	
+		float myMinFloatValue = Float.MIN_VALUE;
+		float myMaxFloatValue = Float.MAX_VALUE;
+		System.out.println("Float Min Value = "+myMinFloatValue);
+		System.out.println("Float Max Value = "+myMaxFloatValue);
+		
+		double myMinDoubleValue = Double.MIN_VALUE;
+		double myMaxDoubleValue = Double.MAX_VALUE;
+		System.out.println("double Min Value = "+myMinDoubleValue);
+		System.out.println("double Max Value = "+myMaxDoubleValue);
+		
+		int myIntValue = 5;
+		float myFloatValue = 5f;
+		double myDoubleValue = 5d;
+		System.out.println("int = "+myIntValue);
+		System.out.println("float = "+myFloatValue);
+		System.out.println("double = "+myDoubleValue);
+		
+		//float myNewFloatValue = 5.25; //=> This will give error
+		//because by default every deciaml value is considered double.
+		//if we want to use it as float, we need to use 'f' as suffix.
+		double myNewDoubleValue = 5.25d;
+	}
+
+}
+		</code></pre>
+  		</td>
+  		<td>
+  		<pre><code>
+Float Min Value = 1.4E-45
+Float Max Value = 3.4028235E38
+double Min Value = 4.9E-324
+double Max Value = 1.7976931348623157E308
+int = 5
+float = 5.0
+double = 5.0
+		</code></pre>
+  		</td>
+  	</tr>
+  </table>
+  <br><br>
+  <p><b>Float</b> is precise up to 7 decimal places.</p>
+  <p><b>Double</b> is precise up to 16 decimal places.</p>
+  
+  <table>
+  	<tr>
+  		<th>Code</th>
+  		<th>Output</th>
+  	</tr>
+  	<tr>
+  		<td>
+  		<pre><code>
+int divIntValue = 5/3;
+
+//float div1FloatValue = (5 / 3)f; //This will give error, invalid
+float divFloatValue = 5f / 3f;
+
+//double divDoubleValue = 5d /3d;
+//As double is being used by default, we can keep it simple as below
+double divDoubleValue = 5.00 /3.00;
+double div1DoubleValue = 5 /3;
+
+System.out.println("int = "+divIntValue);
+System.out.println("float = "+divFloatValue);
+System.out.println("double = "+divDoubleValue);
+System.out.println("double1 = "+div1DoubleValue);
+		</code></pre>
+  		</td>
+  		<td>
+  		<pre><code>
+int = 1
+float = 1.6666666
+double = 1.6666666666666667
+double1 = 1.0
+		</code></pre>
+  		</td>
+  	</tr>
+  </table>
+  <div class="info">
+  <p><strong>Info!</strong>  <br>In general, <b>float</b> and <b>double</b> are great for general floating point 
+  operations. But both are not great to use where precise calculations are required - 
+  this is due to a limitation with how floating point numbers are stored, and not a Java 
+  problem as such.<br><br> But Java has a solution for this. Java has a class 
+  called <b>BigDecimal</b> that overcomes this.</p>
+  </div>
+  <br>
+  <div class="note">
+  <p><strong>Note!</strong> This is always to keep in mind that when precise calculations are necessary, 
+  floating point types should not be used. But for general calculation <b id="c">float</b>
+   and <b id="c">double</b> are fine.</p>
+  </div>
+  
+  <br>
+   <hr>
+   <h2 id="c&b">Char and Boolean:</h2>
+   
+   <h3>Char:</h3>
+   
+   <p>"Char" and "Strings" are different. When we write anything 
+   within " " it is String, whereas Char can store 'single' character.</p>
+   
+   <p>A <strong>char</strong> occupies 2 bytes of memory; or <b>16 bits</b> and thus has a width 
+   of <b>16</b>. The reason is not just a <b>single byte</b> is that it allows us to 
+   store UNICODE characters.</p>
+   
+   <div class="info">
+  <p><strong>Unicode</strong> is an international encoding standard for use with different
+  languages and scripts, by which each letter, digit, or symbol is assigned a unique
+  numeric value that applies across different platforms and programs.</p>
+  
+  <p>In English alphabet, we have letters A through Z. Meaning only 26 characters are needed
+  in total to represent the entire English alphabet. But other languages need more characters,
+  and often a lot more.</p>
+  
+  <p><strong>Unicode</strong> allows us to represent these languages and the way it works is
+  by using a combination of <b>two bytes</b> that a <b>char</b> takes up in a memory it can represent
+   and one of <b>65535</b> different type of characters. 
+   <a href="https://unicode-table.com/en/#control-character" target=" ">Sample 
+   Website for Unicode reference</a></p>
+   
+  </div>
+  
+     <table>
+     <tr>
+     	<th>Unicode Example</th><th>Output</th>
+     </tr>
+  	<tr>
+  		<td>
+  		<pre><code>
+public static void main(String[] args) {
+		
+	char myChar = 'D';
+	char myUnicodeChar = '\u0044';
+	System.out.println(myChar);
+	System.out.println(myUnicodeChar);
+}
+		</code></pre>
+  		</td>
+  		<td>
+  		<pre><code>
+D
+D
+		</code></pre>
+  		</td>
+  	</tr>
+  </table>
+  
+  <h3>Boolean Primitive Type:</h3>
+  <p>A <strong>boolean</strong> value allows for two choices <strong>True</strong> or 
+  <strong>False</strong>, <strong>Yes</strong> or <strong>No</strong>, <strong>1</strong> 
+  or <strong>0</strong>. In Java terms we have a boolean primitive type and it can be set 
+  to two values only i.e., <strong>true</strong> or <strong>false</strong>. </p>
+  
+  <br>
+  <hr>
+  <h2 id="string">String Data Type:</h2>
+  
+  <p>The <strong>String</strong> is a datatype in Java, which is not a primitive type. It is 
+  actually a <strong>Class</strong>, but it enjoys a bit of favoritism in Java to make it 
+  easier to use than a regular class.</p>
+  
+  <p><strong>What is a String ?</strong></p>
+  <p>A <strong>String</strong> is a sequence of characters. In the case of <strong>char</strong> 
+ , it could contain a <strong>single character</strong> only (regular character or Unicode
+  character).</p>
+  
+  <p>A <strong>String</strong> can contain a sequence of characters. A large number of characters.
+   Technically it's limited by memory or the <strong>MAX_VALUE</strong> of an <strong>int</strong>
+    which was <strong>2.14 Billion.</strong> That's a lot of characters.</p>
+	
+<p>
+In addition to the eight primitive data types listed above, the Java programming language 
+also provides special support for character strings via the <span><font color="darkblue">
+java.lang.String</font></span> class.</p>
+<p>Enclosing the character string within double quotes 
+will automatically create a new String object; 
+for example, <span>String s = "this is a string";</span>. 
+String objects are immutable, which means that once created, their values cannot be changed. 
+The String class is not technically a primitive data type, but considering the special support given to it by the language, we'll probably tend to think of it as such.
+</p>	
+    
+<pre><code>
+	public static void main(String[] args) {
+		
+		String myString = "This is a String";
+		System.out.println("myString is equal to "+myString);
+		myString = myString + ", and this is more.";
+		System.out.println("myString is equal to "+myString);
+		myString = myString + " \u00A9 2020 ";
+		System.out.println("myString is equal to "+myString);
+		String numberString = "250.55";
+		numberString = numberString + " 49.95 ";
+		System.out.println(numberString);
+		String lastString = " 10 ";
+		int myInt = 50;
+		lastString = lastString + myInt;
+		System.out.println("Last String is equal to "+ lastString);
+		//converted int to string
+		
+		double doubleNumber = 120.47d;
+		lastString = lastString + doubleNumber;
+		System.out.println("Last String is equal to "+ lastString);
+		//converted double to string
+
+	}
+</code></pre>
+
+<p>Output:</p>
+<pre><code style="background-color: lightgray;">
+	myString is equal to This is a String
+	myString is equal to This is a String, and this is more.
+	myString is equal to This is a String, and this is more. © 2020 
+	250.55 49.95 
+	Last String is equal to  10 50
+	Last String is equal to  10 50120.47
+</code></pre>
+<h4>Strings in Java are Immutable</h4>
+<p>When we say we can delete characters out of a <strong>String</strong>, that's not strictly true.
+Because <strong>Strings</strong> in Java are immutable. This means we can't change a <strong>String</strong>
+ after it's created. Instead, what happens is a new <strong>String</strong> is created.</p>
+ 
+ <pre><code>
+ 	int myInt = 50;
+	lastString = lastString + myInt;
+	System.out.println("Last String is equal to "+ lastString);
+		
+	double doubleNumber = 120.47d;
+	lastString = lastString + doubleNumber;
+	System.out.println("Last String is equal to "+ lastString);
+ </code></pre>
+ 
+ <p>So in case of this code, <strong>lastString</strong> doesn't get appended the value "120.47"
+  instead a new <strong>String</strong> is created which consist of the previous of 
+  <strong>lastString</strong> plus a text representation of the double value <strong>120.47</strong>.</p>
+  
+  <div class="warning">
+  <p>As a result of a String being created, appending values like this is inefficient and not recommended.</p>
+  </div>
+  
+  <hr>
+  <h3>Default Values:</h3>
+  <p>It&#39;s not always necessary to assign a value when a field is declared. 
+  Fields that are declared but not initialized will be set to a reasonable default
+  by the compiler. Generally speaking, this default will be zero or <code>null</code>, 
+  depending on the data type. Relying on such default values, however, is generally 
+  considered bad programming style.</p>
+  
+  <table summary="Default values for primitive types">
+<tr>
+<th align="center"><strong>Data Type</strong></th>
+<th align="center"><strong>Default Value (for fields)</strong></th>
+</tr>
+<tr>
+<td>byte</td>
+<td>0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>float</td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>0.0d</td>
+</tr>
+<tr>
+<td>char</td>
+<td>&#39;\u0000&#39;</td>
+</tr>
+<tr>
+<td>String (or any object) &nbsp;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>false</td>
+</tr>
+</table>
+<p>Local variables are slightly different; the compiler never assigns
+ a default value to an uninitialized local variable. If you cannot 
+ initialize your local variable where it is declared, make sure to 
+ assign it a value before you attempt to use it. Accessing an uninitialized
+ local variable will result in a compile-time error.</p>
+ 
+ <hr>
+ <h3>Overflow & Underflow</h3>
+ <table>
+<tr><td>Code</td><td>Output</td></tr>
+<tr>
+<td>
+<pre><code>
+	public class ByteShortIntLong {
+						
+		public static void main(String[] args) {
+								
+			System.out.println("Int");
+			int myValue = 10000;
+					
+			int myMinIntValue = Integer.MIN_VALUE;
+			int myMaxIntValue = Integer.MAX_VALUE;
+								
+			System.out.println("Integer Minimum Value = " + myMinIntValue);
+			System.out.println("Integer Maximum Value = " + myMaxIntValue);
+								
+			System.out.println("Busted Max Value = " + (myMaxIntValue + 1));
+			System.out.println("Busted Min Value = " + (myMinIntValue - 1));
+								
+			int maxIntValue = 2_147_483_647;
+			//here we'll get error because we'll be changing it literally.
+			System.out.println(myValue);
+			System.out.println(maxIntValue);
+								
+			System.out.println("\nByte");
+								
+			byte myMinByteValue = Byte.MIN_VALUE;
+			byte myMaxByteValue = Byte.MAX_VALUE;
+			System.out.println("Byte Min Value = " + myMinByteValue);
+			System.out.println("Byte Max Value = " + myMaxByteValue);
+								
+			System.out.println("\nShort");
+								
+			short myMinShortValue = Short.MIN_VALUE;
+			short myMaxShortValue = Short.MAX_VALUE;
+			System.out.println("Short Min Value = " + myMinShortValue);
+			System.out.println("Short Max Value = " + myMaxShortValue);
+			
+			System.out.println("\nlong");
+			
+			long mylongValue = 100L; //Representation of a long value
+			long myMinLongValue = Long.MIN_VALUE;
+			long myMaxLongValue = Long.MAX_VALUE;
+			System.out.println("Short Min Value = " + myMinLongValue);
+			System.out.println("Short Max Value = " + myMaxLongValue);
+			
+			long bigLongLitralValue = 2_147_483_647L; 
+			// If we don't type L, it will be taken as integer
+			System.out.println("Big long litral value = "+ bigLongLitralValue);
+		}
+	}
+</code></pre>
+</td><td>
+<pre><code>
+	Int
+	Integer Minimum Value = -2147483648
+	Integer Maximum Value = 2147483647
+	Busted Max Value = -2147483648
+	Busted Min Value = 2147483647
+	10000
+	2147483647
+
+	Byte
+	Byte Min Value = -128
+	Byte Max Value = 127
+
+	Short
+	Short Min Value = -32768
+	Short Max Value = 32767
+
+	long
+	Short Min Value = -9223372036854775808
+	Short Max Value = 9223372036854775807
+	Big long litral value = 2147483647
+</code></pre>
+</td>
+</tr>
+</table>
+  		
+  <p>In the above code:</p>
+  <p id="overflow"><b>OVERFLOW</b></p>
+  <a class="sample">
+  	System.out.println("Busted Max Value = " + (myMaxIntValue + 1));
+  </a>
+  <p>Output: <i>Busted Max Value = -2147483648</i></p>
+  <p>This is <b>OVERFLOW</b>. Because technically it's not possible to add +1 to the MAX_VALUE. 
+  So, somehow it will be adjusted by the compiler see a -ve sign in the output. 
+  <a style="text-decoration: underline;">Overflow</a>: In case of max value.
+  </p>
+  
+  <br>
+  
+  <p id="underflow"><b>UNDERFLOW</b></p>
+  <a class="sample">
+  	System.out.println("Busted Min Value = " + (myMinIntValue - 1));
+  </a>
+  <p>Output: <i>Busted Min Value = 2147483647</i></p>
+  <p>This is <b>UNDERFLOW</b>. This is giving positive value for MIN. Somehow adjusted by compiler. 
+  <a style="text-decoration: underline;">Underflow</a>: In case of min value.</p>
+  
+  <p>Now changing the values literally:</p>
+  <p>Now as we can see, maximum value of INT is "Integer Maximum Value = 2147483647". 
+  If we change it, e.g. 2147483648, it will give error. This is because we're trying to change the 
+  maximum value of int literally.</p>
+  
+  <div class="info">
+  <p><strong>Info!</strong> 
+  Both <a id="c">int</a> and <a id="c">byte</a> have same Overflow and Underflow.</p>
+  </div>
+  
+  <hr>
+  
+  <h3 id="lit">Literals</h3>
+  <p>If we notice that the <span><code>new</code></span> keyword isn&#39;t used
+  when initializing a variable of a primitive type. <i>Primitive types are special
+  data types built into the language</i>; they are not objects created from a class.<br>
+  A <em>literal</em> is the source code representation of a fixed value; 
+  literals are represented directly in our code without requiring computation.
+  As shown below, it&#39;s possible to assign a literal to a variable of a primitive type:</p>
+<pre><code>
+	boolean result = true;
+	char capitalC = 'C';
+	byte b = 100;
+	short s = 10000;
+	int i = 100000;
+</code></pre>
+ 
+</div>
+ <!---------------------Body Ends------------------->
+</div>
+<!------------------------------------ /***Scroll Up Button Starts***/ ------------------------------>
+<!--button onclick="topFunction()" id="myBtn" title="Go to top" style="display: block;"><i class="fas fa-angle-double-up"></i></button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<!------------------------------------ /***Scroll Up Button Ends***/ ------------------------------>
+<!--------Script for Sidenav---------->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+</body>
+</html>

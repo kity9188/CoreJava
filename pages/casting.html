@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java: Casting</title>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="../img/icon.ico">
+<link rel="stylesheet" href="../css/sidenav.css">
+<link rel="stylesheet" href="../css/body.css">
+<link rel="stylesheet" href="../css/hr.css">
+
+
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+  <a href="../index.html"><i class="fas fa-home"></i>&nbsp;Home</a>
+  <a href="variables.html">Variables</a>
+  <a href="expressions.html">Expressions</a>
+  <a href="pridata.html">Primitive Data Types</a>
+  <a class="active" href="casting.html">Casting</a>
+  <a href="operators.html">Operators</a>
+  <a href="keywords&Expressions.html">KeyWords & Expressions</a>
+  <a href="StatementWhiteSpacesAndIndentation.html">Code Organization</a>
+</div>
+
+<div id="main">
+<!----------Styling the header---------->
+<div class="row">
+	<div class="column side">
+		<img src="../img/java.png" alt="Logo" class="avatar">
+	</div>
+	<div class="column middle">
+		<h1>Learning Java</h1>
+	</div>
+	<div class="column side">
+		<p>Start Date: 28-Mar-2020
+		<br>End Date: 27-April-2020(expected)</p>
+	</div>
+</div>
+<hr class="new4">
+<button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>  
+ <!--------------------Body Starts------------------>
+<div class="writing">
+<h2>Casting</h2>
+ <table>
+  	<tr>
+  		<th>Code</th>
+  		<th>Output</th>
+  	</tr>
+  	<tr>
+  		<td>
+  		<pre><code>
+	package lectures;
+
+	public class Casting {
+
+		public static void main(String[] args) {
+			System.out.println("Type Casting in Java");
+			
+			int myMinIntValue = Integer.MIN_VALUE;
+			
+			int myTotal = (myMinIntValue / 2);
+			
+			//trying same with byte
+			byte myMinByteValue = Byte.MIN_VALUE;
+			byte myNewByteValue = (byte) (myMinByteValue / 2);
+			//showing error "Type mismatch: cannot convert from int to byte"
+			
+			short myMinShortValue = Short.MIN_VALUE;
+			short myNewShortValue = (short)(myMinShortValue /2);
+		}
+
+	}
+		</code></pre>
+  		</td>
+  		<td>
+  		<pre><code>
+Type Casting in Java
+		</code></pre>
+  		</td>
+  	</tr>
+  </table>
+  
+  <p>Casting means to treat or convert a number from one type to another.
+  We put the type we want the number to be in parenthesis like below:</p>
+  <p class="sample">(byte)(myMinByteValue/2);</p>
+  
+  <p>Other languages have casting, this is not just a Java thing.</p>
+</div>
+ <!---------------------Body Ends------------------->
+</div>
+<!------------------------------------ /***Scroll Up Button Starts***/ ------------------------------>
+<!--button onclick="topFunction()" id="myBtn" title="Go to top" style="display: block;"><i class="fas fa-angle-double-up"></i></button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<!------------------------------------ /***Scroll Up Button Ends***/ ------------------------------>
+<!--------Script for Sidenav---------->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+<!----------------Side Sub-Navigator Starts---------------->
+</body>
+</html>
